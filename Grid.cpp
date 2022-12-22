@@ -14,7 +14,7 @@ Grid::Grid(int initSize){
         board.push_back(vec);
     }
 
-    
+    /*
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distr(0,size-1);
@@ -33,10 +33,10 @@ Grid::Grid(int initSize){
     }
 
     board[newRandX][newRandY] = 2;
-
+    */
 
     //test board
-    /*
+    
     board[0][0] = 2;
     board[1][0] = 2;
     board[2][0] = 2;
@@ -48,7 +48,8 @@ Grid::Grid(int initSize){
 
     board[2][1] = 2;
     board[2][3] = 2;
-    */
+    
+    board[3][1] = 2;
 
 }
 
@@ -294,6 +295,10 @@ void Grid::pressedRight(){
         }
     }
 
+}
+
+bool Grid::gameIsLost(){
+    return false;
 }
 
 std::vector<std::vector<int>> Grid::getBoard(){return board;}
