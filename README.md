@@ -2,4 +2,7 @@
 
 ## How to run ?
 
-'make all && make run'
+`make all && make run`
+
+## first stable version : 
+ ![alt text](https://github.com/TheoManea/2048-SFML/beta.png?raw=true)
