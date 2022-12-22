@@ -9,7 +9,6 @@
 int main()
 {
     Grid grid(4);
-    grid.asciiOutput();
 
     sf::RenderWindow window(sf::VideoMode(width, height), "2048");
 

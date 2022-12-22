@@ -17,4 +17,5 @@ class Grid{
         void pressedLeft();
         void pressedRight();
         void asciiOutput();
+        void generateNewCell(std::string direction);
 };
