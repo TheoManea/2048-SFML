@@ -8,14 +8,17 @@
 
 int main()
 {
+
+
+    //creating my grid object
     Grid grid(4);
 
     sf::RenderWindow window(sf::VideoMode(width, height), "2048");
+    sf::Color bgColor(250, 248, 239);
+    
 
     while (window.isOpen())
     {
-       
-
         sf::Event event;
         // while there are pending events...
         while (window.pollEvent(event))
@@ -54,10 +57,11 @@ int main()
             }
         }
 
-        window.clear();
+        window.clear(bgColor);
 
         // here everything will be drawn
         drawBoard(window,grid);
+    
 
         window.display();
     }

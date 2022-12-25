@@ -88,6 +88,7 @@ void Grid::pressedUp(){
                 {
                     board[j+1][i] = 0;
                     board[j][i] = 2*currentValue;
+                    score += 2*currentValue;
                 }
             }
             
@@ -152,6 +153,7 @@ void Grid::pressedDown(){
             if(value > 0 && board[j-1][i] == value){
                 board[j-1][i] = 0;
                 board[j][i] = 2*value;
+                score += 2*value;
             }
         }
     }
@@ -214,6 +216,7 @@ void Grid::pressedLeft(){
             {
                 board[i][j+1] = 0;
                 board[i][j] = 2*value;
+                score += 2*value;
             }    
         }
     }
@@ -274,6 +277,7 @@ void Grid::pressedRight(){
             if(j > 0 && board[i][j-1] == value){
                 board[i][j-1] = 0;
                 board[i][j] = 2*value;
+                score += 2*value;
             }
             
         }
@@ -305,7 +309,15 @@ void Grid::pressedRight(){
 
 }
 
-bool Grid::gameIsLost(){
+int Grid::getScore()
+{
+    return score;
+}
+
+
+
+bool Grid::gameIsLost()
+{
     return false;
 }
 
@@ -392,7 +404,7 @@ void Grid::generateNewCell(std::string direction)
     //now we choose a random cell
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distr(0,availableSpawningCells.size());
+    std::uniform_int_distribution<> distr(0,availableSpawningCells.size()-1);
 
     std::vector<int> randCell =  availableSpawningCells[distr(gen)];
     int randI = randCell[0];
